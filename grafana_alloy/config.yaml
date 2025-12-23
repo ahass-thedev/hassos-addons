@@ -34,6 +34,7 @@ options:
   enable_loki_syslog: false
   override_config: false
   override_config_path: "/config/alloy/example.alloy"
+  params: empty
 schema:
   enable_prometheus: bool
   prometheus_write_endpoint: str?
@@ -48,3 +49,4 @@ schema:
   enable_loki_syslog: bool
   override_config: bool
   override_config_path: str?
+  params: str?
