@@ -94,6 +94,16 @@ else
 
         bashio::config.require 'loki_endpoint' "You need to supply Loki endpoint"
 
+       if bashio::config.true 'loki_tls_skip_verify'; then
+            loki_tls_config='
+                tls_config {
+                    insecure_skip_verify = true
+                }'
+        else
+            loki_tls_config=""
+        fi
+
+
         if bashio::config.has_value 'servername_tag'; then
             labels="{component = \"loki.source.journal\", servername = \"$(bashio::config "servername_tag")\"}"
         else
@@ -152,7 +162,7 @@ else
         $syslog_config
         loki.write \"endpoint\" {
             endpoint {
-                url = \"$(bashio::config "loki_endpoint")\"
+               url = \"$(bashio::config "loki_endpoint")\"$loki_tls_config
             }
         }"
     fi
