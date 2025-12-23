@@ -1,6 +1,8 @@
 # hassos-addons
 
-Wymangr Home Assistant Add-Ons
+Forked from Wymangr Home Assistant Add-Ons
+
+Allows for the use of self signed certs for local use. DONT use this for public TLD!
 
 ## Installation
 
