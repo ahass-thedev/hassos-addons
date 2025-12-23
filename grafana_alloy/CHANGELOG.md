@@ -1,4 +1,10 @@
 # Changelog
+## [0.0.8] - 2025-12-23
+
+- Added ability to toggle tls trust certs
+
+- Bugfix - Won't start if the `enable_loki_syslog` not enabled
+
 
 ## [0.0.7] - 2025-05-14
 
